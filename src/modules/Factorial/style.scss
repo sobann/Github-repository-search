@@ -1,0 +1,18 @@
+.factorial__wrapper{
+  .btn--search{
+    @media all and (max-width: 991px){
+      margin-left: 0px;
+      width: 100%;
+      margin-top: 15px;
+    }
+  }
+  input[type="number"]{
+    @media all and (max-width: 991px){
+      width: calc(100% - 30px)!important;
+      max-width: 505px;
+    }
+    @media all and (max-width: 767px){
+      max-width: 100%;
+    }
+  }
+}

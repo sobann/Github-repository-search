@@ -1,0 +1,48 @@
+@use '../../common/styles/colors' as c;
+
+.tasklist{
+  h1{
+    font-size: 24px;
+    @media all and (max-width: 767px){
+      font-size: 18px;
+    }
+  }
+  h2{
+    font-size: 18px
+  }
+  ol.assumptions-list{
+    padding-left: 15px;
+    li{
+      margin-bottom: 5px;
+    }
+  }
+  .tasks__list{
+    .single__task{
+      color: c.$white;
+      padding: 15px;
+      &:nth-child(odd){
+        background-color: c.$nav_btn;
+      }
+      &:nth-child(even){
+        background-color: c.$background_aside;
+      }
+      p{
+        color: c.$white;
+        font-weight: bold;
+        font-size: 18px;
+        margin-top: 0px;
+      }
+      ol{
+        @media all and (max-width: 767px){
+          padding-left: 15px;
+        }
+        li{
+          margin-bottom: 5px;
+          @media all and (max-width: 767px){
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

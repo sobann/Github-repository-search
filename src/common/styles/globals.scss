@@ -1,0 +1,47 @@
+@use './colors.scss' as c;
+
+input{
+  &[type="text"],
+  &[type="number"]{
+    padding: 8px 15px;
+    outline: none;
+    border: 1px solid c.$background_aside;
+    background-color: transparent;
+    color: c.$background_aside;
+    border-radius: 5px;
+    transition: .4s ease;
+    width: 150px;
+    &::placeholder{
+      color: c.$white;
+    }
+    &:focus,
+    &:not(:placeholder-shown) {
+      color: c.$background_aside;
+      width: 300px;
+      background-color: c.$white;
+    }
+  }
+}
+
+.ml-10{
+  margin-left: 10px;
+}
+
+.btn{
+  text-transform: uppercase;
+  background-color: c.$background_aside;
+  border: 0px;
+  padding: 0px 25px;
+  color: c.$white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: .4s ease;
+  letter-spacing: 1px;
+  &:hover{
+    background-color: c.$nav_btn;
+  }
+  &--search{
+    margin-left: 10px;
+    height: 33px;
+  }
+}

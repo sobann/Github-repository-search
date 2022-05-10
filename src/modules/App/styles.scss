@@ -1,0 +1,91 @@
+@use '../../common/styles/colors' as c;
+
+.main__layout{
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  height: 100vh;
+  transition: .4s ease-out;
+  @media all and (max-width: 991px){
+    grid-template-columns: 250px 1fr;
+  }
+  @media all and (max-width: 767px){
+    grid-template-columns: 1fr;
+    grid-template-rows: 215px 1fr;
+  }
+  aside{
+    background: c.$background_aside;
+    nav{
+      position: sticky;
+      top: 10px;
+      @media all and (max-width: 991px){
+        padding-bottom: 10px;
+      }
+      ul{
+        padding-left: 0px;
+        margin: 0px;
+        overflow-x: hidden;
+        li{
+          list-style: none;
+          position: relative;
+          margin-bottom: 10px;
+          transition: .4s ease;
+          &:hover{
+            padding-left: 10px;
+            @media all and (max-width: 991px){
+              padding-left: 0px;
+            }
+          }
+          &.active{
+            padding-left: 10px;
+            &::before{
+              content: '';
+              width: 20px;
+              height: 20px;
+              background: c.$white;
+              transform: rotate(-45deg) translateY(-50%);
+              position: absolute;
+              right: -20px;
+              top: 45%;
+            }
+          }
+          a{
+            text-decoration: none;
+            color: c.$white;
+            letter-spacing: 2px;
+            padding: 15px 25px;
+            background-color: c.$nav_btn;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            @media all and (max-width: 991px){
+              font-size: 14px;
+              padding: 15px;
+            }
+          }
+        }
+      }
+      h2.author{
+        text-align: center;
+        color: c.$white;
+        font-size: 18px;
+        letter-spacing: 2px;
+        font-weight: 300;
+        position: fixed;
+        left: 10px;
+        bottom: 0px;
+        @media all and (max-width: 767px){
+          font-size: 12px;
+          position: initial;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  main{
+    padding: 25px;
+    background-color: c.$main_bg;
+    h1{
+      margin: 0;
+    }
+  }
+}
