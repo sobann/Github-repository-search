@@ -1,5 +1,9 @@
 @use './colors.scss' as c;
 
+body{
+  overflow-x: hidden;
+}
+
 input{
   &[type="text"],
   &[type="number"]{
@@ -19,6 +23,9 @@ input{
       color: c.$background_aside;
       width: 300px;
       background-color: c.$white;
+      @media all and (max-width: 575px){
+        width: 150px;
+      }
     }
   }
 }
