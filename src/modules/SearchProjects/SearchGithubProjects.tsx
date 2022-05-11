@@ -8,10 +8,12 @@ import './style.scss';
 export const SearchGithubProjects: FC = () => {
 
   const dispatch = useDispatch();
-  const personData = useSelector((state:any) => state.searchProjects.personData);
-  const commits = useSelector((state:any) => state.searchProjects.commits);
-  const searchProjectsError = useSelector((state:any) => state.searchProjects.error);
-  const personDataRepos = useSelector((state:any) => state.searchProjects.repositories);
+  const searchProjects = useSelector((state:any) => state.searchProjects);
+
+  const personData = searchProjects.personData;
+  const commits = searchProjects.commits;
+  const searchProjectsError = searchProjects.error;
+  const personDataRepos = searchProjects.repositories;
 
   const inputRef = useRef<HTMLInputElement | null>(null);
 
